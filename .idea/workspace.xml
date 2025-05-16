@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a554eaf-5dda-4a82-afa2-0a0113d1fc52" name="Default Changelist" comment="" />
+    <list default="true" id="0a554eaf-5dda-4a82-afa2-0a0113d1fc52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currencies/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/currencies/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currencies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/currencies/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rates/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rates/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rates/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rates/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
