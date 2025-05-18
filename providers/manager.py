@@ -1,15 +1,27 @@
 from datetime import date
 from decimal import Decimal
-from .currencybeacon import CurrencyBeaconAdapter
-from .mock import MockProvider
 from .base import ExchangeRateProvider
+from django.apps import apps
+from django.utils.module_loading import import_string
 
 class ProviderManager:
-    def __init__(self, providers=None):
-        self.providers = providers or [
-            CurrencyBeaconAdapter(),
-            MockProvider(),
-        ]
+    def __init__(self):
+        ProviderModel = apps.get_model("providers", "Provider")
+        qs = ProviderModel.objects.filter(is_active=True).order_by("priority")
+
+        self.providers: list[ExchangeRateProvider] = []
+        for cfg in qs:
+            try:
+                AdapterClass = import_string(cfg.class_path)
+                adapter = AdapterClass()
+                self.providers.append(adapter)
+            except Exception as e:
+                print(f"[ProviderManager] Failed to load {cfg.name}: {e}")
+
+        if not self.providers:
+            from .currencybeacon import CurrencyBeaconAdapter
+            from .mock import MockProvider
+            self.providers = [CurrencyBeaconAdapter(), MockProvider()]
 
     def get_rate(
         self,
