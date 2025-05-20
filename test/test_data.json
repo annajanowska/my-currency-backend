@@ -1,0 +1,14 @@
+[
+  {
+    "source_currency": "EUR",
+    "exchanged_currency": "USD",
+    "valuation_date": "2025-04-01",
+    "rate_value": "1.12"
+  },
+  {
+    "source_currency": "EUR",
+    "exchanged_currency": "USD",
+    "valuation_date": "2025-03-01",
+    "rate_value": "0.85"
+  }
+]
