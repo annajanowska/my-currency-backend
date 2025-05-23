@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "MyCurrency API",
+    "_postman_id": "e4d22c09-c1b9-4f3e-9bbd-911dbbbc4f3a",
+    "description": "Collection for MyCurrency API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Currencies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/currencies/",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "currencies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Historical Rates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/rates/?source_currency=EUR&date_from=2025-01-01&date_to=2025-01-05",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "rates"],
+          "query": [
+            {
+              "key": "source_currency",
+              "value": "EUR"
+            },
+            {
+              "key": "date_from",
+              "value": "2025-01-01"
+            },
+            {
+              "key": "date_to",
+              "value": "2025-01-05"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Convert Currency",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/convert/?source_currency=EUR&exchanged_currency=USD&amount=10",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "convert"],
+          "query": [
+            {
+              "key": "source_currency",
+              "value": "EUR"
+            },
+            {
+              "key": "exchanged_currency",
+              "value": "USD"
+            },
+            {
+              "key": "amount",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ]
+}
